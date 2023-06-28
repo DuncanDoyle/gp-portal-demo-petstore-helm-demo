@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    gloo.solo.io/scrape-openapi-source: /swagger.json
+    gloo.solo.io/scrape-openapi-retry-delay: "5s"
+    gloo.solo.io/scrape-openapi-pull-attempts: "3"
+    gloo.solo.io/scrape-openapi-use-backoff: "true"
+  name: pets-rest-api
+  namespace: default
+  labels:
+    app: pets-rest-api
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+  selector:
+    app: pets-rest-api
