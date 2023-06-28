@@ -10,5 +10,3 @@ This example deploys a Petstore example application and API Product to your clus
 ```
 $ helm install petstore-apiproduct .
 ```
-
-To see how to use this code example follow the [guide](../../docs/rhoas/rhoas-helm-guide/).
