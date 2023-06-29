@@ -4,8 +4,8 @@ metadata:
   name: petstore-rt
   namespace: gloo-mesh-gateways
   labels:
-     portal: partner-dev-portal
-    #  portal: dev-portal
+    #  portal: partner-dev-portal
+     portal: dev-portal
      api: petstore
 spec:
   portalMetadata:
