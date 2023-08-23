@@ -4,13 +4,15 @@ metadata:
   name: petstore-rt
   namespace: gloo-mesh-gateways
   labels:
-    #  portal: partner-dev-portal
      portal: dev-portal
      api: petstore
 spec:
   portalMetadata:
+    apiProductId: Petstore
+    apiVersion: 1.0
     title: Petstore REST API
     description: Totally awesome API for all things pets!
+    contact: petstore-support@solo.io
   http:
   - name: pets-api
     labels:
@@ -26,17 +28,17 @@ spec:
           namespace: default
         port:
           number: 5000
-  - name: users-api
-    matchers:
-    - uri:
-        prefix: /user
-    forwardTo:
-      destinations:
-      - ref:
-          name: users-rest-api
-          namespace: default
-        port:
-          number: 5000
+  # - name: users-api
+  #   matchers:
+  #   - uri:
+  #       prefix: /user
+  #   forwardTo:
+  #     destinations:
+  #     - ref:
+  #         name: users-rest-api
+  #         namespace: default
+  #       port:
+  #         number: 5000
   # - name: store-api
   #   matchers:
   #   - uri:
